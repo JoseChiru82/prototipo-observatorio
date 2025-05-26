@@ -504,109 +504,98 @@ body {
     background-color: #e05a2b;
 }
 
-/* Estilos para el footer */
+/* Estilos generales */
+/* Estilos generales */
 .main-footer {
-    background-color: #082042; /* Color base que ya usas */
-    background-image: 
-        linear-gradient(145deg, #082042 0%, #0a2a56 100%);
-    color: rgba(255,255,255,0.95);
-    padding: 70px 0 40px;
-    position: relative;
-    box-shadow: inset 0 10px 30px rgba(0,0,0,0.2);
-    border-top: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(145deg, #082042 0%, #0a2a56 100%);
+    color: white;
+    padding: 50px 0 20px;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Ajuste de columnas */
-    gap: 40px;
-    margin-bottom: 40px;
-    align-items: start; /* Alinea items al inicio */
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer-col {
+/* Contenedor flex horizontal */
+.footer-single-column {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
-    text-align: center; /* Centra el texto */
-}
-
-.footer-logo {
-    height: 70px;
-    margin-bottom: 10px; /* Espacio entre imagen y texto */
-    object-fit: contain;
-}
-
-/* Opcional: si quieres limitar el ancho */
-.footer-col p {
-    max-width: 200px; /* Ajusta según necesites */
-    margin: 0 auto; /* Centrado adicional */
-}
-
-/* Estilo específico para la columna del mapa */
-.footer-col:nth-child(2) {
-    padding: 0 20px; /* Espaciado interno */
-    display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribución óptima */
     align-items: center;
+    gap: 20px;
 }
 
-.footer-col iframe {
-    width: 100%;
-    height: 250px;
-    border: 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+/* Items del footer */
+.footer-item {
+    flex: 1; /* Ocupa espacio disponible */
+    min-width: 200px; /* Ancho mínimo */
+    padding: 10px;
+    text-align: center;
 }
 
-.footer-col iframe:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos para los otros elementos */
+/* Logos */
 .footer-logo {
-    height: 70px;
-    margin-bottom: 20px;
+    height: 80px;
+    margin-bottom: 10px;
     object-fit: contain;
 }
 
+/* Mapa ampliado */
+.map-container {
+    flex: 2; /* Más espacio para el mapa */
+    min-width: 300px; /* Ancho mínimo mayor */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 250px; /* Altura aumentada */
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Redes Sociales */
+.social-container {
+    flex: 1;
+}
 
 .footer-social {
     display: flex;
     gap: 15px;
-    margin-top: 20px;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 .footer-social a {
     color: #b1b1b1;
-    font-size: 18px;
-    transition: color 0.2s ease;
+    font-size: 20px;
+    transition: all 0.3s;
 }
 
 .footer-social a:hover {
-    color: white;
+    transform: scale(1.1);
 }
 
-/* Colores originales al hover */
-.footer-social a:nth-child(1):hover { /* LinkedIn */
-    color: #0a66c2;
-}
-.footer-social a:nth-child(2):hover { /* Instagram */
-    color: #e1306c;
-}
-.footer-social a:nth-child(3):hover { /* TikTok */
-    color: #69C9D0;
-}
-
+/* Copyright */
 .copyright {
     text-align: center;
-    padding-top: 30px;
+    margin-top: 40px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #b1b1b1;
     font-size: 14px;
 }
 
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-single-column {
+        flex-direction: column;
+    }
+    .map-container iframe {
+        height: 300px; /* Mapa aún más grande en móviles */
+    }
+}
 /* Estilos para la sección de colaboradores */
 .collaborators {
     margin: 4rem 0;
@@ -636,70 +625,194 @@ body {
     padding: 0 2rem;
 }
 
-.logo-tooltip {
+/* Contenedor principal */
+.partners-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cada item de logo */
+.logo-item {
     position: relative;
-    display: inline-block;
-    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
 }
 
-.logo-tooltip img {
-    height: 90px;
-    width: auto;
-    max-width: 220px;
-    object-fit: contain;
+/* Imágenes de logos */
+.logo-item img {
+    max-width: 200px;
+    height: auto;
     filter: grayscale(100%);
-    opacity: 0.85;
+    opacity: 0.7;
     transition: all 0.3s ease;
+}
+
+/* Contenedor principal */
+.partners-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+/* Cada item de logo */
+.logo-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* Contenedor de imagen para tamaño fijo */
+.logo-img-container {
+    width: 220px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
 }
 
-.logo-tooltip:hover {
-    transform: translateY(-5px);
+/* Imágenes de logos - tamaño uniforme */
+.logo-img-container img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.logo-tooltip:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.1);
+/* Tooltip */
+/* CONTENEDOR PRINCIPAL */
+.partners-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.tooltip-text {
+/* CONTENEDOR DE CADA PARTNER */
+.partner-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CONTENEDOR DE IMAGEN (GRANDE Y A COLOR) */
+.partner-img-container {
+    width: 400px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+
+/* IMAGENES (GRANDES Y A COLOR) */
+.partner-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* TOOLTIP */
+.partner-tooltip {
     visibility: hidden;
-    width: max-content;
-    max-width: 250px;
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
+    width: 350px;
+    background-color: #082042;
+    color: white;
     text-align: center;
-    border-radius: 6px;
-    padding: 10px 15px;
+    border-radius: 8px;
+    padding: 15px;
     position: absolute;
-    z-index: 100;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
+    z-index: 10;
+    bottom: -20px;
+    transform: translateY(100%);
     opacity: 0;
     transition: opacity 0.3s;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.tooltip-text::after {
+/* FLECHA TOOLTIP */
+.partner-tooltip::after {
     content: "";
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 50%;
-    margin-left: -8px;
-    border-width: 8px;
+    margin-left: -10px;
+    border-width: 10px;
     border-style: solid;
-    border-color: var(--azul-oscuro) transparent transparent transparent;
+    border-color: transparent transparent #082042 transparent;
 }
 
-.logo-tooltip:hover .tooltip-text {
+/* EFECTOS HOVER */
+.partner-item:hover .partner-img-container {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.15);
+}
+
+.partner-item:hover .partner-tooltip {
     visibility: visible;
     opacity: 1;
 }
 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .partner-img-container {
+        width: 320px;
+        height: 200px;
+        padding: 20px;
+    }
+    
+    .partner-tooltip {
+        width: 280px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partner-img-container {
+        width: 280px;
+        height: 180px;
+        padding: 15px;
+    }
+    
+    .partner-tooltip {
+        width: 240px;
+        font-size: 14px;
+    }
+}
 /* Responsive para móviles */
 @media (max-width: 768px) {
     .collaboration-logos {
