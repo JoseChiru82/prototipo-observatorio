@@ -218,6 +218,30 @@ body {
     line-height: 1.8;
     color: var(--azul-oscuro);
 }
+.intro-card .indicator-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem; /* un poco de espacio arriba */
+    color: var(--azul-oscuro);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-family: inherit;
+}
+
+.intro-card .indicator-list li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.intro-card .indicator-list li::before {
+    content: '•';
+    color: var(--naranja);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0.3rem; /* para que el punto quede centrado verticalmente */
+}
 
 .objectives-grid {
     display: grid;
